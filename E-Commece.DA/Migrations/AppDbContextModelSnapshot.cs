@@ -38,7 +38,7 @@ namespace E_Commece.DA.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("OrdersT");
 
                     b.HasData(
                         new
@@ -80,7 +80,7 @@ namespace E_Commece.DA.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Products");
+                    b.ToTable("ProductsT");
 
                     b.HasData(
                         new

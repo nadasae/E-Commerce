@@ -52,7 +52,7 @@ namespace E_Commece.DA.Context
             );
 
         }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> OrdersT{ get; set; }
+        public DbSet<Product> ProductsT { get; set; }
     }
 }

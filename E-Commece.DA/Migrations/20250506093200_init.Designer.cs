@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commece.DA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250505223649_init")]
+    [Migration("20250506093200_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -41,7 +41,7 @@ namespace E_Commece.DA.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("OrdersT");
 
                     b.HasData(
                         new
@@ -83,7 +83,7 @@ namespace E_Commece.DA.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Products");
+                    b.ToTable("ProductsT");
 
                     b.HasData(
                         new

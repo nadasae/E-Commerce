@@ -14,7 +14,7 @@ namespace E_Commece.DA.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Orders",
+                name: "OrdersT",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -24,11 +24,11 @@ namespace E_Commece.DA.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.PrimaryKey("PK_OrdersT", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "ProductsT",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -40,17 +40,17 @@ namespace E_Commece.DA.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_ProductsT", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Products_Orders_OrderId",
+                        name: "FK_ProductsT_OrdersT_OrderId",
                         column: x => x.OrderId,
-                        principalTable: "Orders",
+                        principalTable: "OrdersT",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
-                table: "Orders",
+                table: "OrdersT",
                 columns: new[] { "Id", "OrderDate", "Status" },
                 values: new object[,]
                 {
@@ -59,7 +59,7 @@ namespace E_Commece.DA.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Products",
+                table: "ProductsT",
                 columns: new[] { "Id", "Name", "OrderId", "Price", "Quantity" },
                 values: new object[,]
                 {
@@ -69,8 +69,8 @@ namespace E_Commece.DA.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_OrderId",
-                table: "Products",
+                name: "IX_ProductsT_OrderId",
+                table: "ProductsT",
                 column: "OrderId");
         }
 
@@ -78,10 +78,10 @@ namespace E_Commece.DA.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "ProductsT");
 
             migrationBuilder.DropTable(
-                name: "Orders");
+                name: "OrdersT");
         }
     }
 }
